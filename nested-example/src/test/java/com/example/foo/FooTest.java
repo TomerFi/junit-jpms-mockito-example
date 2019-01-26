@@ -11,7 +11,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class FooTest {
+class FooTest {
 	@Mock
 	private Supplier<String> testSupplier;
 
