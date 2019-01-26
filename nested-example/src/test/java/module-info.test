@@ -1,0 +1,24 @@
+// Copied from "modular-test" project...
+// open module bar {
+//   requires org.junit.jupiter.api;
+//	 requires org.mockito;
+//   requires mockito.junit.jupiter; // automatic module name derived from jar file name
+//   requires net.bytebuddy;
+// }
+
+// "open module" (each package) to JUnit to find non-public tests
+--add-opens
+  com.example.foo/com.example.foo=org.junit.platform.commons
+// "open module" (each package) to Mockito to access non-public fields
+--add-opens
+  com.example.foo/com.example.foo=org.mockito
+
+// "requires <module name>"
+--add-reads
+  com.example.foo=org.junit.jupiter.api
+--add-reads
+  com.example.foo=org.mockito
+--add-reads
+  com.example.foo=mockito.junit.jupiter
+--add-reads
+  com.example.foo=net.bytebuddy
