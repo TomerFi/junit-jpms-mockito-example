@@ -24,4 +24,4 @@ jobs:
         with:
           java-version: 11
       - name: Test
-        uses: mvn clean test
+        run: mvn clean test
